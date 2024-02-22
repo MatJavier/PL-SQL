@@ -49,7 +49,26 @@ end;
 inset 
 */
 insert into departments (name, location) values
-   ('Finance','New York');
+ ('Finance','New York');
 
 insert into departments (name, location) values
    ('Development','San Jose');
+
+
+/* TEMAS:
+Package en PLSQL
+Store Procedure de mantenimiento
+Librería DBMS_UTL_FILE ( manejo de archivos planos )
+Librería : DBMS_LOB ( archivos binarios PDF )
+Wrap : Ocultamiento de código
+*/
+
+/* Package en PLSQL */
+
+
+/* PL-SQL */
+
+
+
+
+  

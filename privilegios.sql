@@ -45,7 +45,7 @@ GRANT CREATE USER, CREATE TABLE, CREATE SESSION
 TO PRODUCCION WITH ADMIN OPTION;
 
  
-PRIVILEGIOS DE OBJETOS
+#PRIVILEGIOS DE OBJETOS
 
 -- 6
 -- Asignarle al usuario USER300  privilegios de consulta 
@@ -64,4 +64,34 @@ GRANT SELECT , INSERT, UPDATE , DELETE ON HR.REGIONS TO USER300;
 -- Quitar el privilegio de inserción sobre la tabla 
 -- HR.RGIONS al usuario “USER300”
 REVOKE SELECT ON SCOTT.EMP FROM USER300;
+
+
+
+
+-- MANEJO DE ROLES
+
+#ROLES
+
+---------------
+-- 1. ROLES 
+---------------
+CREATE ROLE JEFATURA NOT IDENTIFIED;
+
+-----------------------------------------
+-- 2. ASIGNANDO PRIVILEGIOS A LOS ROLES 
+-----------------------------------------
+GRANT SELECT, INSERT, UPDATE ON HR.JOBS TO JEFATURA;
+GRANT CREATE SESSION TO JEFATURA01;
+
+CREATE USER USER500 IDENTIFIED BY 123;
+
+GRANT JEFATURA TO USER500;
+
+-- Conéctese como USER500 y compruebe que el rol cedió los
+-- privilegios de JEFATURA.
+
+SELECT * FROM HR.JOBS;
+
+
+
 
